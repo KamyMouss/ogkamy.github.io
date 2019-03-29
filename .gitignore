@@ -9,7 +9,6 @@
 /coverage
 
 # production
-deploy.sh
 
 # misc
 .DS_Store
