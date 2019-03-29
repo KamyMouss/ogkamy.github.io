@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "grep": "^0.1.0",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8"
@@ -11,7 +12,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy": "git checkout master && rm -rf * && git checkout source -- $(git ls-tree --name-only -r source | egrep 'build/*') && git mv build/* . && rm -rf build && git add --all && git commit -m \"deployed\" && git checkout source"
+    "deploy": "git checkout master && rm -rf * && git checkout source -- $(git ls-tree --name-only -r source | grep -E 'build/*') && git mv build/* . && rm -rf build && git add --all && git commit -m \"deployed\" && git checkout source"
   },
   "eslintConfig": {
     "extends": "react-app"
