@@ -11,8 +11,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "node deploy"
+    "deploy": "git checkout master && rm -rf * && git checkout source -- $(git ls-tree --name-only -r source | egrep 'build/*') && git mv build/* . && rm -rf build && git add --all && git commit -m \"deployed\" && git checkout source"
   },
   "eslintConfig": {
     "extends": "react-app"
